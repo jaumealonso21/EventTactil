@@ -2,6 +2,7 @@ $(document).ready(function(){
     var menu1 = $('#menu1');
     var menu2 = $('#menu2');
     var menu3 = $('#menu3');
+    var titol = $('#titol').hide();
     var i = $('#img1').hide();//D'inici el div de les imatges estigui buida
     var j = 0;//Comptador d'imatges
     var gal;//Seleccionador de galeries
@@ -19,7 +20,8 @@ $(document).ready(function(){
     //Capa imatge
     i.on({
         swipeUp: cambioUp, swipeDown: cambioDown, 
-        swipeRight: cambioRight, swipeLeft: cambioLeft
+        swipeRight: cambioRight, swipeLeft: cambioLeft,
+        click: cambioTitol
     });
     
     function cambioTap(event){
@@ -60,6 +62,10 @@ $(document).ready(function(){
             gal++;
         }
         i.attr('src', galerias[gal][j]);
+    }
+    function cambioTitol(){
+        titol.show();
+        
     }
 });
 
