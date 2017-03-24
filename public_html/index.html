@@ -1,0 +1,20 @@
+<html><head><meta charset="UTF-8"><title>Smiley</title>
+<script type="text/javascript" src="zepto.min.js" ></script>
+<script type="text/javascript">
+ $(function(){
+ var i =$('#i1');
+ var xIni, yIni;
+ i.on('touchstart', function(e){
+ xIni = e.targetTouches[0].pageX;
+ yIni = e.targetTouches[0].pageY;
+ });
+ i.on('touchmove', function(e){
+ if (e.targetTouches[0].pageX > xIni+10) i.attr('src', 'scare.jpeg');
+ if (e.targetTouches[0].pageX < xIni-10) i.attr('src', 'wait.gif');
+ });
+ });
+</script></head>
+<body>
+ <h4>Event Touch</h4>
+ <img src="wait.gif" alt="wait" id="i1"/>
+</body></html>

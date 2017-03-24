@@ -1,0 +1,13 @@
+<html><head><meta charset="UTF-8"><title>Smiley2</title>
+<script type="text/javascript" src="zepto.min.js" ></script>
+<script type="text/javascript" src="touch.js" ></script>
+<script type="text/javascript">
+ $(function(){
+ var i = $('#i1');
+i.on('swipeRight', function(){ i.attr('src', 'scare.jpeg'); });
+i.on('swipeLeft', function() { i.attr('src', 'wait.gif'); });
+ });
+</script></head>
+<body>
+<img src="wait.gif" alt="wait" id="i1"/>
+</body></html>
